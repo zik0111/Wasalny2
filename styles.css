@@ -1,0 +1,216 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    color: #000000;
+}
+
+
+.card,
+.status-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+
+#map {
+    height: 400px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.493);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+.coord-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.btn {
+    padding: 12px;
+    border-radius: 80px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #111111, #000000);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+    color: white;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.status-card {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.status-card.active {
+    background: linear-gradient(135deg, #34d399, #6a9b8b);
+}
+
+.status-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.notification-badge {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    z-index: 9999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.notification-badge.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.permission-warning {
+    display: none;
+    background: #fef3c7;
+    padding: 15px;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.permission-warning.show {
+    display: block;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 20px 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-content p {
+    font-size: 12px;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.footer-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fbbf24; 
+}
+
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .coord-input {
+        grid-template-columns: 1fr;
+    }
+}
